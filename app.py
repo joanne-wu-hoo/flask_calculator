@@ -5,28 +5,28 @@ app = Flask(__name__)
 # Part 1: Create 4 separate routes to add, subtract, multiply, and divide two numbers
 @app.route('/add')
 def return_sum():
-    """Add a and b parameters"""
+    """Add a and b parameters. Return result."""
     a = int(request.args["a"])
     b = int(request.args["b"])
     return f"<body>{add(a,b)}</body>"
 
 @app.route('/sub')
 def return_dif():
-    """Subtract a and b parameters"""
+    """Subtract a and b parameters. Return result."""
     a = int(request.args["a"])
     b = int(request.args["b"])
     return f"<body>{sub(a,b)}</body>"
 
 @app.route('/mult')
 def return_product():
-    """Multiply a and b parameters"""
+    """Multiply a and b parameters. Return result."""
     a = int(request.args["a"])
     b = int(request.args["b"])
     return f"<body>{mult(a,b)}</body>"
 
 @app.route('/div')
 def return_quotient():
-    """Divide a and b parameters"""
+    """Divide a and b parameters. Return result."""
     a = int(request.args["a"])
     b = int(request.args["b"])
     return f"<body>{div(a,b)}</body>"
@@ -41,6 +41,7 @@ math_operations = {"add": add,
 
 @app.route('/math/<operation>')
 def calculate(operation):
+    """Execute requested operation on a and b parameters. Return result."""
     a = int(request.args["a"])
     b = int(request.args["b"])
 
